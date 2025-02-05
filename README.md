@@ -20,7 +20,7 @@ augment this dataset so that I had 20 'distinct' examples for each band. The way
 in colour, I randomly skewed, stretched, and applied colour jitters to get some variance in the colour. If the logo was black and which, I first made a copy replacing the white
 pixles with a random copy, and then applied my colour augmentation scheme. This was done in the ```Colour_Image_Augmentor``` and ```BW_Image_Augmentor``` notebooks. 
 
-The labels of my images to be of the form:
+The labels of my images are of the form:
 
 ```
 This is an image of the logo for [band name], who are a [genre] band
