@@ -15,7 +15,7 @@ is a small fraction of the total bands that one could ask for. The bands in the 
 
 ### Dataset
 
-The dataset for this project was the logos of 686 bands, which I downloaded from [the Metal Archives](https://www.metal-archives.com/)). In order to suppliment this, I wrote scripts to 
+The dataset for this project was the logos of 686 bands, which I downloaded from [the Metal Archives](https://www.metal-archives.com/). In order to suppliment this, I wrote scripts to 
 augment this dataset so that I had 20 'distinct' examples for each band. The way I augmented a bands photo depended on whether the logo was black and white or colour. If the logo was 
 in colour, I randomly skewed, stretched, and applied colour jitters to get some variance in the colour. If the logo was black and which, I first made a copy replacing the white
 pixles with a random copy, and then applied my colour augmentation scheme. This was done in the ```Colour_Image_Augmentor``` and ```BW_Image_Augmentor``` notebooks. 
