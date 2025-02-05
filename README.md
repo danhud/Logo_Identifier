@@ -11,7 +11,7 @@ it’s likely you’d enjoy some of the unfamiliar bands as well. The problem? T
 
 The goal of this project was to make a small vector database of metal band logos, with the purpose of being a proof of concept for an app idea where you could 
 upload the image of a unknown band's logo, and have it return the name and details of the band corresponding to the logo. Currently there are 686 bands in the database, which 
-is a small fraction of the total bands that one could ask for. The bands in the database are listed in ```included_bands.csv```, and the main notebook is ```Identifier_App```; note that currently the model take up half a gigbyte of space, so I haven't yet uploaded it to GitHub (message me if you want it and I can send it to you).
+is a small fraction of the total bands that one could ask for. The bands in the database are listed in ```included_bands.csv```, and the main notebook is ```Identifier_App```; note that currently the model takes up half a gigbyte of space, so I haven't yet uploaded it to GitHub (message me if you want it and I can send it to you).
 
 ### Dataset
 
