@@ -51,8 +51,7 @@ in the dataframe had since been changed. Nonetheless, it achieved 81% accuracy o
 
 Overall, I'm pleased with the results. I think that my results would dramatically improve with more images of actual band merchandise, but for time reasons this is out of the question. 
 As for constructing a vector database with all the bands on the Metal Archives, I think this would be quite a task. As of November 2024, there are more than 180k bands on the website. 
-Crude estimations show that there are about ~6GB and band logos. If I were to repeat my regime on this who dataset, it would take well over 200 hours to train which is difficult to justify. 
-In any case, this was a fun project that does pretty well (in my opinion) and taught me a lot!
+Crude estimations show that there are about ~6GB of band logos. If I were to repeat my regime on this who dataset, it would take well over 200 hours to train which is difficult to justify. In any case, this was a fun project that does pretty well (in my opinion) and taught me a lot!
 
 
 
