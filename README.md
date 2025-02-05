@@ -44,8 +44,7 @@ help improve learning. In the end, the two training loops combined took just und
 
 ### Testing 
 
-I tested the model on a collection of 68 images of band merch that I took screens shots of. In this set, not all the bands were included in my dataframe, and some of the logos for bands 
-in the dataframe had since been changed. Nonetheless, it achieved 81% accuracy on this test set. The images I used are in the ```Test Images``` folder. 
+I tested the model on a collection of 68 images of band merch that I took screensshots of. Not all the bands in this collectetion were included in my dataframe, and some of the logos for bands in the dataframe had since been changed. Nonetheless, it achieved 81% accuracy. The images I used are in the ```Test Images``` folder. 
 
 ### Outlook
 
