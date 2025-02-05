@@ -13,6 +13,8 @@ The goal of this project was to make a small vector database of metal band logos
 upload the image of a unknown band's logo, and have it return the name and details of the band corresponding to the logo. Currently there are 686 bands in the database, which 
 is a small fraction of the total bands that one could ask for. The bands in the database are listed in ```included_bands.csv```, and the main notebook is ```Identifier_App```; note that currently the model takes up half a gigbyte of space, so I haven't yet uploaded it to GitHub (message me if you want it and I can send it to you).
 
+I should mention that this project was possible becuase of the dataframe ```metal_bands_roster.csv```, which I downloaded from [Kaggle](https://www.kaggle.com/datasets/guimacrlh/every-metal-archives-band-october-2024?resource=download&select=metal_bands_roster.csv); thanks to Reddit user **lmarso** for posting this!
+
 ### Dataset
 
 The dataset for this project was the logos of 686 bands, which I downloaded from [the Metal Archives](https://www.metal-archives.com/). In order to suppliment this, I wrote scripts to 
