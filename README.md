@@ -11,15 +11,15 @@ it’s likely you’d enjoy some of the unfamiliar bands as well. The problem? T
 
 The goal of this project was to make a small vector database of metal band logos, with the purpose of being a proof of concept for an app idea where you could 
 upload the image of a unknown band's logo, and have it return the name and details of the band corresponding to the logo. Currently there are 686 bands in the database, which 
-is a small fraction of the total bands that one could ask for. The bands in the database are listed in ```included_bands.csv```, and the main notebook is ```Identifier_App```; note that currently the model takes up half a gigbyte of space, so I haven't yet uploaded it to GitHub (message me if you want it and I can send it to you).
+is a small fraction of the total bands that one could ask for. The bands in the database are listed in ```included_bands.csv```, and the main notebook is ```Identifier_App```; note that currently the model takes up half a gigbyte of space, so I you can get it [here](https://drive.google.com/drive/folders/1GImWyJTMKJaBGEKJXTT3bI2AhAcdQYys?usp=sharing).
 
 I should mention that this project was possible becuase of the dataframe ```metal_bands_roster.csv```, which I downloaded from [Kaggle](https://www.kaggle.com/datasets/guimacrlh/every-metal-archives-band-october-2024?resource=download&select=metal_bands_roster.csv); thanks to Reddit user **lmarso** for posting this!
 
 ### Dataset
 
-The dataset for this project was the logos of 686 bands, which I downloaded from [the Metal Archives](https://www.metal-archives.com/). In order to suppliment this, I wrote scripts to 
+The dataset for this project was the logos of 686 bands, which I downloaded from [the Metal Archives](https://www.metal-archives.com/). In order to supplement this, I wrote scripts to 
 augment this dataset so that I had 20 'distinct' examples for each band. The way I augmented a bands photo depended on whether the logo was black and white or colour. If the logo was 
-in colour, I randomly skewed, stretched, and applied colour jitters to get some variance in the colour. If the logo was black and which, I first made a copy replacing the white
+in colour, I randomly skewed, stretched, and applied colour jitters to get some variance in the colour. If the logo was black and white, I first made a copy replacing the white
 pixles with a random copy, and then applied my colour augmentation scheme. This was done in the ```Colour_Image_Augmentor``` and ```BW_Image_Augmentor``` notebooks. 
 
 The labels of my images are of the form:
@@ -33,15 +33,13 @@ The labels were generated in the ```Data_Annotator``` notebook. The choice of th
 
 ### Model 
 
-For this project, I selected the [CLIP model](https://openai.com/index/clip/) provided by OpenAI through the HuggingFace Transformers library. My decision was based on two main factors. 
-First, my end goal was to create a vector database for my band logos, and the CLIP architecture is particularly well-suited for this purpose. Second, many metal band logos 
+For this project, I selected the [CLIP model](https://openai.com/index/clip/) provided by OpenAI through the HuggingFace Transformers library. My decision was based on two main factors. First, my end goal was to create a vector database for my band logos, and the CLIP architecture is particularly well-suited for this purpose. Second, many metal band logos 
 share similar design elements, so I appreciated how CLIP uses differences in the labels to ensure that distinct logos have a significant cosine dissimilarity.
 
 ### Fine-tuning
 
-After augemnting my images my dataset had 14686 images, 70% of which I used for training and 30% for validating. I fine-tuned using [contrastive loss](https://medium.com/towards-data-science/contrastive-loss-explaned-159f2d4a87ec) for 30 epochs
-on a smaller dataset, and then for 60 epochs on a larger dataset; this was done in the ```fine_tuner_v2``` notebook. For the second training loop, I used a learning rate scheduler to 
-help improve learning. In the end, the two training loops combined took just under 3 hours using an A100 GPU through Google Colab. The optimal training and validation losses were:
+After augemnting my images my dataset had 14686 images, 70% of which I used for training and 30% for validating. I fine-tuned using [contrastive loss](https://medium.com/towards-data-science/contrastive-loss-explaned-159f2d4a87ec) for 30 epochs on a smaller dataset, and then for 60 epochs on a larger dataset; this was done in the ```fine_tuner_v2``` notebook. For the second training loop, I used a learning rate scheduler to help improve learning. In the end, the two training loops combined took just under 3 hours using an A100 GPU through Google Colab. The optimal training and validation losses were:
+
 ```Training Loss: 0.0129 - Validation Loss: 0.0393```.
 
 ### Testing 
